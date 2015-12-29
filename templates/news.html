@@ -1,0 +1,60 @@
+{% extends 'index_tep.html' %}
+{% block content %}
+<section class="content-wrap">
+    <div class="container">
+        <div class="row">
+            <main class="col-md-8 main-content">
+                <article class="post">
+                    <div class="post-head text-center"><h1 class="post-title"><a href="#" class="">
+                        {{ article.name }}</a></h1></div>
+                    <div class="post-meta text-center"><span class="author">发布单位:妇女儿童中心 | {{ article.create_time }}</span></div>
+                    <div class="post-content" id="post-content-detail">
+                        {{ article.content|safe }}
+                    </div>
+                </article>
+                <div class="post">
+                    <h3>评论区</h3>
+                    {% if comments %}
+                        {% for comment in comments %}
+                            <div style="font-size: 1.5rem;">
+                                <span class="glyphicon glyphicon-user"></span> <span>
+                                {{ comment.ip|default:'匿名' }}</span>  <span
+                                    style="color:
+                                #959595;">{{ comment.create_time }}</span>
+                                <p style="text-indent: 2em;">{{ comment.content }}</p>
+                            </div>
+                        {% endfor %}
+
+                        {% else %}<h4>还没有评论,发表下自己的见解吧</h4>
+                    {% endif %}
+                </div>
+                <div class="comment post">
+                    <h3>发表评论</h3>
+                    <form action="/comment" method="post" class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon glyphicon glyphicon-comment" style="position: initial;"></span>
+                            <input type="text" name="content" class="form-control" placeholder="直接就可以发表评论哦" required/>
+                        </div>
+                        <input type="text" name="article" value="{{ article.id }}" style="display: none">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-success" style="margin-top: 10px;">提交评论</button>
+                        </form>
+                </div>
+            </main>
+            <aside class="col-md-4 sidebar">
+                <div class="widget">
+                    <h4 class="title">“联系方式”</h4>
+                    <div class="text-center">
+                        <p>扫一扫添加我们的公众号</p>
+                        {% load static %}
+                        <img style="width: 50%;" src="{% static 'image/erweima.jpg' %}"
+                             alt="二维码">
+                        <p>办公电话：0553-3838583</p>
+                        <p>青少年素质教育QQ群：424299778</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+{% endblock %}

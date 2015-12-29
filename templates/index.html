@@ -1,0 +1,76 @@
+{% extends 'index_tep.html' %}
+{% load static %}
+{% block content %}
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner center-block" role="listbox">
+            <div class="item active">
+                <a href="{% url 'article' 1 %}">
+                    <img style="max-width: 100%;min-width: 100%;height: auto" src=
+                            "{% static 'image/first.jpg' %}"
+                         alt="图片"></a>
+            </div>
+            <div class="item">
+                <a href="{% url 'article' 1 %}">
+                    <img style="max-width: 100%;min-width: 100%;height: auto" src=
+                            "{% static 'image/second.jpg' %}"
+                         alt="图片"></a>
+            </div>
+            <div class="item">
+                <a href="{% url 'article' 1 %}">
+                    <img style="max-width: 100%;min-width: 100%;height: auto" src=
+                            "{% static 'image/third.jpg' %}"
+                         alt="图片"></a>
+            </div>
+            <div class="item">
+                <a href="{% url 'article' 1 %}">
+                    <img style="max-width: 100%;min-width: 100%;height: auto" src=
+                            "{% static 'image/forth.jpg' %}"
+                         alt="图片"></a>
+            </div>
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+        </div>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="color: black;">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="color: black;">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div class="container-fluid" id="little-panel">
+    <div class="row">
+        <div class="col-md-2">
+            <img src="{% static 'image/gif3.gif' %}" alt="" class="thumbnail">
+        </div>
+        <div class="col-md-2">
+            <h4>服务妇女</h4>
+            <p>芜湖市妇女儿童活动中心是妇女之家，温馨港湾。开展家政服务、妇女创业就业培训、下岗女工技能培训、交流联谊、文体比赛等活动。</p>
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'image/gif2.gif' %}" alt="" class="thumbnail">
+        </div>
+        <div class="col-md-2">
+            <h4>服务儿童</h4>
+            <p>芜湖市妇女儿童活动中心是一站式青少年素质教育基地， “锁定青少、辐射家庭”，提供一个儿童和父母互动的空间。中心设置各类儿童艺体培训、科普教育、早期教育、亲子互动等多种服务功能。</p>
+        </div>
+        <div class="col-md-2">
+            <img src="{% static 'image/gif.gif' %}" alt="" class="thumbnail">
+        </div>
+        <div class="col-md-2">
+            <h4>服务社会</h4>
+            <p>培养儿童、凝聚妇女、推动家庭，面向全市，服务妇女儿童发展的公益性社会文化教育服务展示传播平台。</p>
+        </div>
+    </div>
+    </div>
+{% endblock %}
+{% block extent_js %}
+    <script src="{% static 'js/index.js' %}"></script>
+{% endblock %}
