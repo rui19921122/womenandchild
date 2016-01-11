@@ -20,7 +20,7 @@ settings.configure()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if 'mypassword' in os.listdir('/'):
     with open('/mypassword/mysql') as file:
-        PASSWORD = file.read()
+        PASSWORD = file.read().strip()
 else:
     PASSWORD = "111111"
 
