@@ -1,9 +1,8 @@
-from django.core.exceptions import ValidationError
-from django.db import models
-from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
-from imagekit.models import ImageSpecField
-from imagekit.processors import ResizeToFill,ResizeToFit
+from django.contrib.auth.models import User
+from django.db import models
+from imagekit.models import ProcessedImageField
+from imagekit.processors import ResizeToFill, ResizeToFit
 
 
 # Create your models here.
@@ -33,10 +32,47 @@ class Comment(models.Model):
     news = models.ForeignKey('news.Article')
     ip = models.GenericIPAddressField(null=True, blank=True)
 
+    class Meta:
+        verbose_name = '评论'
+
+
+class MainPic(models.Model):
+    url = models.URLField(verbose_name='指向', help_text='请输入点击图片或链接后的跳转地址，为空则不跳转', blank=True)
+    pic = ProcessedImageField(upload_to='index', verbose_name='首页图片,建议为2000*500分辨率', processors=[ResizeToFill(
+            width=2000, height=500)], format='JPEG', options={'quality': 95})
+    upload_date = models.DateTimeField(verbose_name='上传时间', auto_now_add=True)
+    on_home = models.NullBooleanField(default=True, verbose_name='是否在首页显示',
+                                      help_text='图片是否在首页显示，如果觉得首页显示图片过多，请把其他不需要首页显示的条目此项去掉')
+    name = models.CharField(verbose_name='好记的名称', default='首页图片', max_length=50)
+
+    class Meta:
+        verbose_name = '首页大图'
+        ordering = ['-upload_date']
+
+    def __str__(self):
+        return self.name
+
+
+class SecondaryPic(models.Model):
+    url = models.URLField(verbose_name='指向', help_text='请输入点击图片或链接后的跳转地址，为空则不跳转', blank=True)
+    title = models.CharField(verbose_name='标题', max_length=30)
+    text = models.CharField(verbose_name='文本', max_length=100)
+    pic = ProcessedImageField(upload_to='index', verbose_name='图片,建议为460*320分辨率', processors=[ResizeToFill(
+            width=460, height=320)], format='JPEG', options={'quality': 95})
+    upload_date = models.DateTimeField(verbose_name='上传时间', auto_now_add=True)
+
+    class Meta:
+        verbose_name = '次要首页图片'
+        ordering = ['-upload_date']
+
+    def __str__(self):
+        return self.title
+
 
 class Picture(models.Model):
-    pic = models.ImageField(upload_to='upload')
-    pic_700 = ImageSpecField(source='pic', processors=[ResizeToFit(700)], format='JPEG', options={'quality': 95})
+    pic = ProcessedImageField(upload_to='upload', processors=[ResizeToFit(700)], format='JPEG',
+                              options={'quality': 95},
+                              )
     name = models.CharField(max_length=50)
 
 

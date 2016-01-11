@@ -1,27 +1,20 @@
-from PIL import Image
 from django.contrib.auth.models import User
-from django.core.files import File
 from django.core.paginator import Paginator
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import RequestContext, render_to_response
 from django.views.decorators.csrf import csrf_exempt
 from xpinyin import Pinyin
 
-from news.models import Article, Models, Comment, Picture
-import os
-from uuid import uuid1
+from news.models import Article, Models, Comment, Picture, MainPic, SecondaryPic
 
 
 # Create your views here.
 
 def index(requests):
     if requests.method == 'GET':
-        pic = Article.objects.filter(on_home=True)[:2]
-        panels_dic = {}
-        panels = Models.objects.filter(is_important=True).all()
-        for i in panels:
-            panels_dic[i.name] = {'url': i.id, 'content': Article.objects.filter(model=i).order_by('create_time')}
-        a = {'pic': pic, 'panels': panels_dic}
+        pic = MainPic.objects.filter(on_home=True)
+        secondary = SecondaryPic.objects.filter()[:3]
+        a = {'pic': pic, 'sec': secondary}
         return render_to_response('index.html', a)
     else:
         return Http404
@@ -108,5 +101,5 @@ def uploads(request):
         f = Pinyin()
         new = Picture(pic=_image, name=f.get_pinyin(_image.name))
         new.save()
-        url = new.pic_700.url
+        url = new.pic.url
         return render_to_response('ckeditor_return.html', {'path': url, 'number': number})
