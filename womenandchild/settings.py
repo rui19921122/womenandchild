@@ -12,17 +12,24 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 from django.conf import settings
 
 settings.configure()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if 'mypassword' in os.listdir('/'):
+    with open('/mypassword/mysql') as file:
+        PASSWORD = file.read()
+else:
+    PASSWORD = "111111"
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = '$h=9-@=pfjh3u)^p0-0%t$0)jlqj#%*5vgdos6eh551gb(b8mi'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -86,7 +93,7 @@ DATABASES = {
         'PORT': '3306',
         'NAME': 'django_women',
         'USER': 'root',
-        'PASSWORD': '111111',
+        'PASSWORD': PASSWORD,
     }
 }
 
