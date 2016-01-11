@@ -118,7 +118,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(__file__), '..', 'media').replace('\\', '/')
+if PASSWORD == '111111':
+    MEDIA_ROOT = os.path.join(os.path.dirname(__file__), '..', 'media').replace('\\', '/')
+else:
+    MEDIA_ROOT = '/media'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, "templates/dist")
