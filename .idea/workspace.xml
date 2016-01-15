@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98d3f948-f628-4af8-9efb-f3b3f30cd818" name="Default" comment="update register">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/womenandchild/settings.py" afterPath="$PROJECT_DIR$/womenandchild/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/news/admin.py" afterPath="$PROJECT_DIR$/news/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/news/models.py" afterPath="$PROJECT_DIR$/news/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index_tep.html" afterPath="$PROJECT_DIR$/templates/index_tep.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/news.html" afterPath="$PROJECT_DIR$/templates/news.html" />
     </list>
     <ignored path="womenandchild.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
+              <caret line="71" column="72" selection-start-line="71" selection-start-column="72" selection-end-line="71" selection-end-column="72" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -67,14 +69,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="news.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/news.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.59375">
+              <caret line="42" column="82" selection-start-line="42" selection-start-column="82" selection-end-line="42" selection-end-column="82" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/womenandchild/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43934426">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding>
-                <element signature="e#386#395#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="51" column="10" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,39 +103,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="news.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/news.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.84375">
-              <caret line="94" column="33" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
-              <folding>
-                <element signature="n#style#0;n#button#0;n#article#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index_tep.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index_tep.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index_tep.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.0">
-              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.5351438">
+              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/news/models.py">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/news/admin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -173,16 +171,16 @@
         <option value="$PROJECT_DIR$/templates/login.html" />
         <option value="$PROJECT_DIR$/user/views.py" />
         <option value="$PROJECT_DIR$/user/forms.py" />
-        <option value="$PROJECT_DIR$/news/admin.py" />
         <option value="$PROJECT_DIR$/womenandchild/urls.py" />
         <option value="$PROJECT_DIR$/templates/dist/css/index.css" />
         <option value="$PROJECT_DIR$/templates/news_display.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/womenandchild/settings.py" />
         <option value="$PROJECT_DIR$/news/models.py" />
         <option value="$PROJECT_DIR$/main/views.py" />
-        <option value="$PROJECT_DIR$/templates/index_tep.html" />
         <option value="$PROJECT_DIR$/templates/news.html" />
-        <option value="$PROJECT_DIR$/womenandchild/settings.py" />
+        <option value="$PROJECT_DIR$/news/admin.py" />
+        <option value="$PROJECT_DIR$/templates/index_tep.html" />
       </list>
     </option>
   </component>
@@ -321,7 +319,7 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="push&#9;ACTION&#9;Vcs.Push&#10;se&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/womenandchild/settings.py&#10;inde&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/templates/index.html&#10;admin&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/news/admin.py&#10;url&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/womenandchild/urls.py&#10;ad&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/news/admin.py&#10;pinyin&#9;null&#9;null&#10;mo&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/news/models.py&#10;form&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/user/forms.py&#10;news&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/templates/news.html&#10;new&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/templates/news_display.html&#10;art&#9;null&#9;null&#10;com&#9;null&#9;null&#10;model&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/user/models.py&#10;set&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/womenandchild/settings.py&#10;regi&#9;null&#9;null&#10;urls&#9;FILE&#9;file://C:/Users/韩瑞/Desktop/womenandchild/womenandchild/urls.py&#10;setting&#9;RUN_CONFIGURATION&#9;settings&#10;mode&#9;null&#9;null&#10;views&#9;FILE&#9;file://C:/Users/韩瑞/Desktop/womenandchild/main/views.py&#10;vi&#9;FILE&#9;file://E:/Website/main/views.py&#10;upload&#9;null&#9;null&#10;index&#9;FILE&#9;file://E:/Website/templates/index.html&#10;current.jpg&#9;null&#9;null&#10;index.js&#9;FILE&#9;file://D:/new1/templates/dist/js/index.js&#10;boot&#9;FILE&#9;file://D:/new1/templates/dist/css/bootstrap.css&#10;n&#9;FILE&#9;file://C:/Users/Administrator/PycharmProjects/womenandchild/templates/news_display.html&#10;s&#9;FILE&#9;file://C:/Users/Administrator/PycharmProjects/womenandchild/womenandchild/settings.py&#10;sett&#9;FILE&#9;file://C:/Users/Administrator/PycharmProjects/womenandchild/womenandchild/settings.py&#10;cke&#9;null&#9;null&#10;ck&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="news.&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/templates/news.html&#10;vi&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/main/views.py&#10;admin&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/news/admin.py&#10;com&#9;null&#9;null&#10;push&#9;ACTION&#9;Vcs.Push&#10;se&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/womenandchild/settings.py&#10;inde&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/templates/index.html&#10;url&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/womenandchild/urls.py&#10;ad&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/news/admin.py&#10;pinyin&#9;null&#9;null&#10;mo&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/news/models.py&#10;form&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/user/forms.py&#10;news&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/templates/news.html&#10;new&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/templates/news_display.html&#10;art&#9;null&#9;null&#10;model&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/user/models.py&#10;set&#9;FILE&#9;file://C:/Users/Administrator/Desktop/womenandchild/womenandchild/settings.py&#10;regi&#9;null&#9;null&#10;urls&#9;FILE&#9;file://C:/Users/韩瑞/Desktop/womenandchild/womenandchild/urls.py&#10;setting&#9;RUN_CONFIGURATION&#9;settings&#10;mode&#9;null&#9;null&#10;views&#9;FILE&#9;file://C:/Users/韩瑞/Desktop/womenandchild/main/views.py&#10;upload&#9;null&#9;null&#10;index&#9;FILE&#9;file://E:/Website/templates/index.html&#10;current.jpg&#9;null&#9;null&#10;index.js&#9;FILE&#9;file://D:/new1/templates/dist/js/index.js&#10;boot&#9;FILE&#9;file://D:/new1/templates/dist/css/bootstrap.css&#10;n&#9;FILE&#9;file://C:/Users/Administrator/PycharmProjects/womenandchild/templates/news_display.html&#10;s&#9;FILE&#9;file://C:/Users/Administrator/PycharmProjects/womenandchild/womenandchild/settings.py&#10;sett&#9;FILE&#9;file://C:/Users/Administrator/PycharmProjects/womenandchild/womenandchild/settings.py&#10;cke&#9;null&#9;null&#10;ck&#9;null&#9;null" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="javascript.nodejs.core.library.configured.version" value="4.1.0" />
@@ -950,7 +948,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452868725182</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="update register">
+      <created>1452868962268</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1452868962268</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -969,7 +973,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771337" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -982,9 +986,9 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13432837" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19083156" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="manage.py@womenandchild" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32665965" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="manage.py@womenandchild" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32665965" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27608007" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27608007" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1030,13 +1034,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/news/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1323,14 +1320,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/news/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26557377">
-          <caret line="6" column="97" selection-start-line="6" selection-start-column="97" selection-end-line="6" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/womenandchild/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22459017">
@@ -1371,6 +1360,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/womenandchild/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="10" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.4375">
@@ -1381,53 +1378,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index_tep.html">
+    <entry file="file://D:/python3.4/Lib/site-packages/django/core/management/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.0">
-          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+        <state vertical-scroll-proportion="1.0471125">
+          <caret line="527" column="0" selection-start-line="527" selection-start-column="0" selection-end-line="527" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/news.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.84375">
-          <caret line="94" column="33" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#article#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/news/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
+          <caret line="71" column="72" selection-start-line="71" selection-start-column="72" selection-end-line="71" selection-end-column="72" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/womenandchild/settings.py">
+    <entry file="file://$PROJECT_DIR$/templates/news.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43934426">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state vertical-scroll-proportion="-7.59375">
+          <caret line="42" column="82" selection-start-line="42" selection-start-column="82" selection-end-line="42" selection-end-column="82" />
           <folding>
-            <element signature="e#386#395#0" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28723404">
+          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index_tep.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5351438">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

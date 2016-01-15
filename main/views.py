@@ -69,7 +69,7 @@ def article(requests, id):
         article_detail = Article.objects.get(id=id)
         article_detail.view_count += 1
         article_detail.save()
-        comment = Comment.objects.filter(news=article_detail).order_by('create_time')[:15]
+        comment = Comment.objects.filter(news=article_detail, checked=True).order_by('create_time')[:15]
         dic = {'comments': comment, 'article': article_detail}
         dic.update(get_header(requests))
         return render_to_response('news.html', dic, context_instance=RequestContext(requests))

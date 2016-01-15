@@ -36,6 +36,9 @@ class Comment(models.Model):
         verbose_name = '评论'
         verbose_name_plural = '评论'
 
+    def __str__(self):
+        return self.content
+
 
 class MainPic(models.Model):
     url = models.URLField(verbose_name='指向', help_text='请输入点击图片或链接后的跳转地址，为空则不跳转', blank=True)
