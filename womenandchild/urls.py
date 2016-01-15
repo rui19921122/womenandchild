@@ -15,11 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+
 from main.views import index,dep, article, comment, search, uploads
+from user.views import register
 from womenandchild import settings
-
-
-
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -30,6 +29,7 @@ urlpatterns = [
     url(r'^comment',comment),
     url(r'^search$',search),
     url(r'^uploads',uploads),
+    url(r'^register$', register)
 ]
 if settings.DEBUG:
     urlpatterns.append(url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root':settings.MEDIA_ROOT}))

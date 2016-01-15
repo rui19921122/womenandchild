@@ -31,6 +31,7 @@ class Comment(models.Model):
     content = models.TextField(verbose_name='评论内容')
     news = models.ForeignKey('news.Article')
     ip = models.GenericIPAddressField(null=True, blank=True)
+    commenter = models.ForeignKey('user.CustomUser', verbose_name='评论人')
 
     class Meta:
         verbose_name = '评论'

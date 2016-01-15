@@ -49,7 +49,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'ckeditor',
     'news',
-    'main'
+    'main',
+    'user',
+    'localflavor',
 )
 
 MIDDLEWARE_CLASSES = (

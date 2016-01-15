@@ -1,0 +1,21 @@
+{% extends 'index_tep.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-push-2">
+                <form action="/" method="post" class="form-horizontal">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    {% for field in form %}
+                        <div class="form-group">
+                            <label for="{{ field.id_for_label }}">{{ field.label }}
+                                <span class="field_error">{{ field.error }}</span></label>
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+                    <input type="submit" value="注册" class="btn btn-success">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

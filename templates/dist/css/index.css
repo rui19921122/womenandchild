@@ -1162,3 +1162,7 @@ li.open,li.open>a{
     color: #000;
     margin-left:50px;
 }
+
+.field_error {
+    color: red !important;
+}

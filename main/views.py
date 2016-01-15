@@ -9,6 +9,10 @@ from news.models import Article, Models, Comment, Picture, MainPic, SecondaryPic
 
 
 # Create your views here.
+def get_header(requests):
+    # todo unimplemented
+    return
+
 
 def index(requests):
     if requests.method == 'GET':
@@ -69,9 +73,6 @@ def comment(requests):
         return HttpResponseRedirect('article/{}'.format(article_id))
 
 
-def register(requests):
-    if requests.method == 'POST' and not requests.user.is_authenticated():
-        username = requests.POST.get('username')
 
 
 def search(requests):
