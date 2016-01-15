@@ -52,6 +52,7 @@ INSTALLED_APPS = (
     'main',
     'user',
     'localflavor',
+    'django_admin_bootstrapped',
 )
 
 MIDDLEWARE_CLASSES = (
