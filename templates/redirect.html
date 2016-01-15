@@ -1,0 +1,11 @@
+{% extends 'index_tep.html' %}
+{% block content %}
+    <div style="height: 300px;margin: auto auto;">
+        <p class="text-center align-center">
+            {{ message }},将在5S内跳转至首页</p></div>
+    <script>
+        setTimeout(function () {
+            window.location.href = '/'
+        }, 5000)
+    </script>
+{% endblock %}

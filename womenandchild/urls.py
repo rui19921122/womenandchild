@@ -16,20 +16,22 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from main.views import index,dep, article, comment, search, uploads
-from user.views import register
+from main.views import index, dep, article, comment, search, uploads
+from user.views import register, login_url
 from womenandchild import settings
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
-    url(r'^$',index),
-    url(r'^dep/(\d{1,5})',dep),
-    url(r'^article/(?P<id>\d{1,10})',article, name='article'),
-    url(r'^comment',comment),
-    url(r'^search$',search),
-    url(r'^uploads',uploads),
-    url(r'^register$', register)
+    url(r'^$', index),
+    url(r'^dep/(.{1,30})$', dep, name='dep'),
+    url(r'^article/(?P<id>\d{1,100000})', article, name='article'),
+    url(r'^comment', comment, name='comment'),
+    url(r'^search$', search, name='search'),
+    url(r'^uploads', uploads),
+    url(r'^register$', register, name='register'),
+    url(r'^login$', login_url, name='login'),
 ]
 if settings.DEBUG:
-    urlpatterns.append(url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root':settings.MEDIA_ROOT}))
+    urlpatterns.append(
+            url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}))

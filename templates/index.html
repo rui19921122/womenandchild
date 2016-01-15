@@ -7,10 +7,10 @@
             {% for i in pic %}
                 <div class="item {% if forloop.first %}active{% endif %}">
                     <a href="{% if i.url %}{{ i.url }}{% else %}#{% endif %}">
-                    <img style="max-width: 100%;min-width: 100%;height: auto" src=
-                            "{{ i.pic.url }}"
-                         alt="图片"></a>
-            </div>
+                        <img style="max-width: 100%;min-width: 100%;height: auto" src=
+                                "{{ i.pic.url }}"
+                             alt="图片"></a>
+                </div>
             {% endfor %}
             <ol class="carousel-indicators">
                 {% for i in pic %}
@@ -32,16 +32,23 @@
         </a>
     </div>
     <div class="container-fluid" id="little-panel">
-    <div class="row">
-        {% for i in sec %}
-            <div class="col-md-2">
-                <img src="{{ i.pic.url }}" alt="" class="thumbnail">
-            </div>
-            <div class="col-md-2">
-                <h4 style="overflow: hidden;height: 2em;line-height: 1">{{ i.title }}</h4>
-                <p style="overflow: hidden;height: 5em;line-height: 1.1">{{ i.text }}</p>
-            </div>
-        {% endfor %}
+        <div class="row">
+            {% for i in sec %}
+                <div class="col-md-4 secondary-pic col-md-push-1">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="{{ i.pic.url }}" alt="" class="thumbnail">
+                        </div>
+                        <div class="col-md-6">
+                            <a href="{{ i.url|default:'#' }}">
+                                <h4 style="overflow: hidden;height: 2em;line-height: 1">{{ i.title }}</h4></a>
+                            <p style="overflow: hidden;height: 5em;line-height: 1.1">{{ i.text }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
 {% block extent_js %}

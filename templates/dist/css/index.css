@@ -1019,6 +1019,7 @@ pre {
 .main-footer {
     background: #ff99e3;
     color: #959595;
+    margin-top: 30px;
 }
 
 .main-footer .widget .title {
@@ -1139,18 +1140,19 @@ pre {
     padding: 50px 15px;
 }
 
-.navbar-mystyle,.dropdown-menu {
+.navbar-mystyle, .dropdown-menu {
     background-color: #ed0082;
 }
 
-
-.nav li a{
+.nav li a {
     color: #fff;
 }
-.nav>li:hover>a{
+
+.nav > li:hover > a {
     color: #000;
 }
-li.open,li.open>a{
+
+li.open, li.open > a {
     color: #000;
 }
 
@@ -1160,9 +1162,19 @@ li.open,li.open>a{
 
 .footer-a {
     color: #000;
-    margin-left:50px;
+    margin-left: 50px;
 }
 
 .field_error {
     color: red !important;
+}
+
+.secondary-pic {
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.secondary-pic img {
+    border: none;
 }

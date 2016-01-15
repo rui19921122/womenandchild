@@ -2,47 +2,50 @@
 {% load staticfiles %}
 {% block content %}
 
-<section class="content-wrap">
-    <div class="container">
-        <div class="row">
-            <main class="col-md-8 main-content">
-            {% if not articles %}
-            <h1>没有条目!</h1>{% endif %}
-                {% for article in articles %}
-                    <article class="post">
-                        <div class="post-head text-center"><h1 class="post-title"><a href="/article/{{ article.id }}"
-                                                                                     class="">
-                            {{ article.name }}</a></h1></div>
-                        <div class="post-meta text-center"><span class="author">类别:{{ article.model.name }} | {{ article.create_time }}</span></div>
-                        <div class="post-content">
-                            {{ article.content|safe|truncatechars_html:200 }}
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content">
+                    {% if not articles %}
+                        <h1>没有条目!</h1>{% endif %}
+                    {% for article in articles %}
+                        <article class="post">
+                            <div class="post-head text-center"><h1 class="post-title"><a
+                                    href="/article/{{ article.id }}"
+                                    class="">
+                                {{ article.name }}</a></h1></div>
+                            <div class="post-meta text-center"><span
+                                    class="author">类别:{{ article.model.name }} | {{ article.create_time }}</span></div>
+                            <div class="post-content">
+                                {{ article.content|safe|truncatechars_html:200 }}
+                            </div>
+                            <a class="btn btn-success" href="/article/{{ article.id }}">阅读全文</a>
+                        </article>
+                    {% endfor %}
+                </main>
+                <aside class="col-md-4 sidebar">
+                    <div class="widget">
+                        <h4 class="title">“联系方式”</h4>
+                        <div class="text-center">
+                            <p>扫一扫添加我们的公众号</p>
+                            <img style="width: 50%;" src="{% static 'image/erweima.jpg' %}"
+                                 alt="二维码">
+                            <p>办公电话：0553-3838583</p>
+                            <p>青少年素质教育QQ群：424299778</p>
                         </div>
-                        <a class="btn btn-success" href="/article/{{ article.id }}">阅读全文</a>
-                    </article>
-                {% endfor %}
-            </main>
-            <aside class="col-md-4 sidebar">
-                <div class="widget">
-                    <h4 class="title">“联系方式”</h4>
-                    <div class="text-center">
-                        <p>扫一扫添加我们的公众号</p>
-                        <img style="width: 50%;" src="{% static 'image/erweima.jpg' %}"
-                             alt="二维码">
-                        <p>办公电话：0553-3838583</p>
-                        <p>青少年素质教育QQ群：424299778</p>
                     </div>
-                </div>
-            </aside>
-        </div>
-        <nav class="pagination text-center">
-        {% if cur_num > 1 %}
-            <a href="/dep/{{ id }}?page={{ cur_num|add:"-1" }}"  class="newer"><i class="glyphicon
+                </aside>
+            </div>
+            <nav class="pagination text-center">
+                {% if cur_num > 1 %}
+                    <a href="/dep/{{ id }}?page={{ cur_num|add:"-1" }}" class="newer"><i class="glyphicon
             glyphicon-arrow-left"></i></a>{% endif %}
-            <span class="page-number">第 {{ cur_num }} 页/共 {{ page_num }} 页</span>
-        {% if cur_num < page_num %}
-            <a href="/dep/{{  id }}?page={{ cur_num|add:"1" }}"  class="older"><i class="glyphicon glyphicon-arrow-right"></i></a>
-        {% endif %}
-        </nav>
-    </div>
-</section>
+                <span class="page-number">第 {{ cur_num }} 页/共 {{ page_num }} 页</span>
+                {% if cur_num < page_num %}
+                    <a href="/dep/{{ id }}?page={{ cur_num|add:"1" }}" class="older"><i
+                            class="glyphicon glyphicon-arrow-right"></i></a>
+                {% endif %}
+            </nav>
+        </div>
+    </section>
 {% endblock %}

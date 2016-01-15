@@ -5,7 +5,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
     <meta charset="UTF-8">
     <meta name="renderer" content="webkit">
-    <link rel="icon" href="{% static 'image/favicon-20151229081944178.ico' %}" mce_href="{% static 'image/favicon-20151229081944178.ico' %}"
+    <link rel="icon" href="{% static 'image/favicon-20151229081944178.ico' %}"
+          mce_href="{% static 'image/favicon-20151229081944178.ico' %}"
           type="image/x-icon">
     <link rel="shortcut icon" href="{% static 'image/favicon-20151229081944178.ico' %}"
           mce_href="{% static 'image/favicon-20151229081944178.ico' %}" type="image/x-icon">
@@ -40,41 +41,21 @@
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="/">首页</a></li>
-                <li><a href="/article/1">中心简介</a></li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                        aria-haspopup="true" aria-expanded="false">家政服务<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/dep/1">家政培训</a></li>
-                        <li><a href="/dep/2">中介服务</a></li>
-                        <li><a href="/dep/3">技能大赛</a></li>
-                        <li><a href="/dep/4">明星学员</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                        aria-haspopup="true" aria-expanded="false">青少年素质教育基地<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/dep/5">早教中心</a></li>
-                        <li><a href="/dep/6">少儿培训</a></li>
-                        <li><a href="/dep/7">主题活动</a></li>
-                        <li><a href="/dep/8">风采展示</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                        aria-haspopup="true" aria-expanded="false">家庭教育<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/dep/9">心理咨询</a></li>
-                        <li><a href="/dep/10">指导中心</a></li>
-                        <li><a href="/dep/11">公益讲座</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                        aria-haspopup="true" aria-expanded="false">魅力女性<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/dep/12">品味生活</a></li>
-                    </ul>
-                </li>
+                <li><a href="{% url 'article' 1 %}">中心简介</a></li>
+                {% for dep in header %}
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                            aria-haspopup="true" aria-expanded="false">{{ dep.0 }}<span
+                            class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            {% for inner in dep.1 %}
+                                <li><a href="{% url 'dep' inner.0 %}">{{ inner.1 }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
             </ul>
-            <form class="navbar-form navbar-right" role="search" target="_parent" autocomplete="off" action="/search"
+            <form class="navbar-form navbar-right" role="search" target="_parent" autocomplete="off"
+                  action="{% url 'search' %}"
                   method="get">
                 <div class="input-group">
                     <input type="text" name="search" class="form-control" id="" placeholder="搜索新闻、产品">
@@ -100,14 +81,6 @@
 <script src="{% static "js/jquery.js" %}"></script>
 <script src="{% static "js/bootstrap.js" %}"></script>
 {% block extent_js %}
-    <script>
-        $(document).ready(function () {
-            var innerNav = $("#navbar-collapse");
-            var nav = $("#navbar");
-            var logo = $("#logo");
-            var margin = (nav.width() - innerNav.width()) / 2;
-            logo.css('margin-left', margin);
-        });</script>
 {% endblock %}
 </body>
 </html>

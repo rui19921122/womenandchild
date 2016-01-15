@@ -3,19 +3,19 @@ from django.contrib.auth.models import User
 from django.db import models
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill, ResizeToFit
+from xpinyin import Pinyin
 
 
 # Create your models here.
 class Article(models.Model):
     name = models.CharField(max_length=20, verbose_name='新闻标题')
     create_time = models.DateTimeField(auto_now_add=True)
-    create_people = models.ForeignKey(User, verbose_name='创建人')
     color = models.CharField(choices=(('black', '黑色'), ('white', '白色')), default='black', max_length=15,
                              help_text='''定义文字在首页显示的颜色''', verbose_name='首页文字颜色')
     content = RichTextField(verbose_name='新闻内容')
-    on_home = models.BooleanField(default=False, verbose_name='放在首页？')
-    model = models.ForeignKey('news.Models', verbose_name='板块名称')
-    pic = models.ImageField(verbose_name='首页图片', blank=True, default=None)
+    model = models.ForeignKey('news.Models', verbose_name='过渡板块名称')
+    main_model = models.ForeignKey('news.ModelsChild', verbose_name='板块名称', null=True)
+    view_count = models.IntegerField(verbose_name='访问数', default=0, editable=False)
 
     def __str__(self):
         return self.name
@@ -26,21 +26,21 @@ class Article(models.Model):
 
 
 class Comment(models.Model):
-    user = models.ForeignKey(User, null=True)
+    user = models.ForeignKey(User, null=True, verbose_name='评论人')
     create_time = models.DateField(auto_now_add=True)
     content = models.TextField(verbose_name='评论内容')
     news = models.ForeignKey('news.Article')
-    ip = models.GenericIPAddressField(null=True, blank=True)
-    commenter = models.ForeignKey('user.CustomUser', verbose_name='评论人')
+    checked = models.BooleanField(verbose_name='是否已检查', default=False)
 
     class Meta:
         verbose_name = '评论'
+        verbose_name_plural = '评论'
 
 
 class MainPic(models.Model):
     url = models.URLField(verbose_name='指向', help_text='请输入点击图片或链接后的跳转地址，为空则不跳转', blank=True)
     pic = ProcessedImageField(upload_to='index', verbose_name='首页图片,建议为2000*500分辨率', processors=[ResizeToFill(
-            width=2000, height=500)], format='JPEG', options={'quality': 95})
+            width=2000, height=550)], format='JPEG', options={'quality': 95})
     upload_date = models.DateTimeField(verbose_name='上传时间', auto_now_add=True)
     on_home = models.NullBooleanField(default=True, verbose_name='是否在首页显示',
                                       help_text='图片是否在首页显示，如果觉得首页显示图片过多，请把其他不需要首页显示的条目此项去掉')
@@ -58,8 +58,9 @@ class SecondaryPic(models.Model):
     url = models.URLField(verbose_name='指向', help_text='请输入点击图片或链接后的跳转地址，为空则不跳转', blank=True)
     title = models.CharField(verbose_name='标题', max_length=30)
     text = models.CharField(verbose_name='文本', max_length=100)
-    pic = ProcessedImageField(upload_to='index', verbose_name='图片,建议为460*320分辨率', processors=[ResizeToFill(
-            width=460, height=320)], format='JPEG', options={'quality': 95})
+    pic = models.ImageField(upload_to='index', verbose_name='图片')
+    # pic = ProcessedImageField(upload_to='index', verbose_name='图片,建议为460*320分辨率', processors=[ResizeToFill(
+    #         width=460, height=320)], format='JPEG', options={'quality': 95})
     upload_date = models.DateTimeField(verbose_name='上传时间', auto_now_add=True)
 
     class Meta:
@@ -97,9 +98,15 @@ class ModelsParent(models.Model):
 
 
 class ModelsChild(models.Model):
-    name = models.CharField(max_length=10, verbose_name='大板块名称')
+    name = models.CharField(max_length=10, verbose_name='子板块名称')
     parent = models.ForeignKey('news.ModelsParent', verbose_name='父板块')
     number = models.SmallIntegerField(verbose_name='排序')
+    shortcut = models.CharField(max_length=100, verbose_name='简写', editable=False, unique=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        if len(self.name) > 0:
+            self.shortcut = Pinyin().get_pinyin(self.name, '')[:30]
+            super(ModelsChild, self).save(*args, **kwargs)
 
     class Meta:
         ordering = ['-number']
