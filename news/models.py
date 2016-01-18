@@ -99,6 +99,9 @@ class ModelsParent(models.Model):
         ordering = ['-number']
         verbose_name = '父板块'
 
+    def __str__(self):
+        return self.name
+
 
 class ModelsChild(models.Model):
     name = models.CharField(max_length=10, verbose_name='子板块名称')
@@ -114,3 +117,6 @@ class ModelsChild(models.Model):
     class Meta:
         ordering = ['-number']
         verbose_name = '子版块'
+
+    def __str__(self):
+        return self.name

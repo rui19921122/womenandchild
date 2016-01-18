@@ -29,7 +29,7 @@ def get_header(request):
 def index(requests):
     if requests.method == 'GET':
         pic = MainPic.objects.filter(on_home=True)
-        secondary = SecondaryPic.objects.filter()[:4]
+        secondary = SecondaryPic.objects.filter()[:3]
         parent = ModelsParent.objects.all()
         header = []
         for i in parent:

@@ -49,7 +49,7 @@
                             class="caret"></span></a>
                         <ul class="dropdown-menu">
                             {% for inner in dep.1 %}
-                                <li><a href="{% url 'dep' inner.0 %}">{{ inner.1 }}</a></li>
+                                <li><a href="{% url 'dep' inner.1 %}">{{ inner.0 }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>
