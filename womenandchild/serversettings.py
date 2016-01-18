@@ -114,7 +114,7 @@ STATICFILES_DIRS = (
 )
 
 # CKEditor config
-CKEDITOR_JQUERY_URL = r'admin/js/jquery.js'
+CKEDITOR_JQUERY_URL = r'admin/js/jquery.v1.js'
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_RESTRICT_BY_USER = True
 CKEDITOR_UPLOAD_SLUGIFY_FILENAME = False
