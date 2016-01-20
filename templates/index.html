@@ -32,21 +32,21 @@
         </a>
     </div>
     <div class="container-fluid" id="little-panel">
-        <div class="row">
-            {% for i in sec %}
-                <a href="{{ i.url }}">
-                    <div class="col-md-5">
-                        <div class="col-md-7">
-                            <img src="{{ i.pic.url }}" alt="" class="thumbnail">
-                        </div>
-                        <div class="col-md-5">
-                            <h4 style="overflow: hidden;line-height: 1">{{ i.title }}</h4>
-                            <p style="overflow: hidden;height: 5em;line-height: 1.1;color: black;">{{ i.text|truncatewords:20 }}</p>
-                        </div>
+    <div class="row">
+        {% for i in sec %}
+            <a href="{{ i.url }}">
+                <div class="col-md-4">
+                    <div class="col-md-7">
+                        <img src="{{ i.pic.url }}" alt="" class="thumbnail">
                     </div>
-                </a>
-            {% endfor %}
-        </div>
+                    <div class="col-md-5">
+                        <h4 style="overflow: hidden;line-height: 1">{{ i.title }}</h4>
+                        <p style="overflow: hidden;height: 5em;line-height: 1.1;color: black;">{{ i.text|truncatewords:20 }}</p>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
 {% endblock %}
 {% block extent_js %}
 {% endblock %}
