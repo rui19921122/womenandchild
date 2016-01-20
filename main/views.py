@@ -53,7 +53,7 @@ def dep(requests, shortcut, ):
             article = Article.objects.filter(main_model=model)
         except:
             return Http404
-        paginator = Paginator(article, 10)
+        paginator = Paginator(article, 5)
         page_num = paginator.num_pages
         try:
             articles = paginator.page(page)

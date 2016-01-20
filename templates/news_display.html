@@ -15,7 +15,8 @@
                                     class="">
                                 {{ article.name }}</a></h1></div>
                             <div class="post-meta text-center"><span
-                                    class="author">类别:{{ article.model.name }} | {{ article.create_time }}</span></div>
+                                    class="author">类别:{{ article.model.main_model }} | {{ article.create_time }}</span>
+                            </div>
                             <div class="post-content">
                                 {{ article.content|safe|truncatechars_html:200 }}
                             </div>

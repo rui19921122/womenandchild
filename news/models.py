@@ -60,9 +60,9 @@ class MainPic(models.Model):
 class SecondaryPic(models.Model):
     url = models.URLField(verbose_name='指向', help_text='请输入点击图片或链接后的跳转地址，为空则不跳转', blank=True)
     title = models.CharField(verbose_name='标题', max_length=30)
-    text = models.CharField(verbose_name='文本', max_length=100)
+    text = models.CharField(verbose_name='文本', max_length=60)
     pic = models.ImageField(upload_to='index', verbose_name='图片')
-    # pic = ProcessedImageField(upload_to='index', verbose_name='图片,建议为460*320分辨率', processors=[ResizeToFill(
+    # pic = ProcessedImageField(upload_to='index', verbose_name='图片,500*320分辨率', processors=[ResizeToFill(
     #         width=460, height=320)], format='JPEG', options={'quality': 95})
     upload_date = models.DateTimeField(verbose_name='上传时间', auto_now_add=True)
 
@@ -96,7 +96,7 @@ class ModelsParent(models.Model):
     number = models.SmallIntegerField(verbose_name='排序')
 
     class Meta:
-        ordering = ['-number']
+        ordering = ['number']
         verbose_name = '父板块'
 
     def __str__(self):
@@ -115,7 +115,7 @@ class ModelsChild(models.Model):
             super(ModelsChild, self).save(*args, **kwargs)
 
     class Meta:
-        ordering = ['-number']
+        ordering = ['number']
         verbose_name = '子版块'
 
     def __str__(self):
