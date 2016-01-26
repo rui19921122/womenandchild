@@ -59,9 +59,15 @@
                   method="get">
                 <div class="input-group">
                     <input type="text" name="search" class="form-control" id="" placeholder="搜索新闻、产品">
-                    <span class="input-group-addon glyphicon glyphicon-search" style="position: initial;"></span>
+                    <button type="submit" class="input-group-addon glyphicon glyphicon-search"
+                            style="position: initial;"></button>
                 </div>
             </form>
+            {% if user %}
+                <div class="navbar-right ">
+                    欢迎您，{{ user.username }}
+                </div>
+            {% endif %}
         </div>
     </div>
 </div>

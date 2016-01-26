@@ -7,7 +7,7 @@
         <div class="row">
             <main class="col-md-8 main-content">
             {% if not articles %}
-            <h1>没有找到文章,请尝试其他关键!</h1>{% endif %}
+                <h1>没有找到文章,请尝试其他关键词!</h1>{% endif %}
                 {% for article in articles %}
                     <article class="post">
                         <div class="post-head text-center"><h1 class="post-title"><a href="/article/{{ article.id }}"

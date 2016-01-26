@@ -5,8 +5,6 @@
             <div class="row">
                 <main class="col-md-8 main-content">
                     <article class="post">
-                        <button type="reset" style="position: relative;" class="btn btn-success" id="back">返回
-                        </button>
                         <div class="post-head text-center"><h1 class="post-title">
                             {{ article.name }}</h1></div>
                         <div class="post-meta text-center"><span
@@ -46,6 +44,9 @@
                                 <input type="text" name="article" value="{{ article.id }}" style="display: none">
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-success" style="margin-top: 10px;">提交评论</button>
+                                <button type="reset" style="position: relative;margin-top: 10px;"
+                                        class="btn btn-success" id="back">返回
+                                </button>
                             </form>
                         </div>
                     {% else %}
@@ -63,6 +64,8 @@
                                 <a href="{% url 'login' %}" class="btn btn-success" style="margin-top: 10px;">您还未登陆,点击登陆
                                 </a>
                                 <a href="{% url 'register' %}" class="btn btn-success" style="margin-top: 10px;">没有账号？点击注册
+                                </a>
+                                <a type="reset" style="position: relative;" class="btn btn-success" id="back">返回
                                 </a>
                             </form>
                         </div>

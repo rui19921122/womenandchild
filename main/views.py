@@ -21,7 +21,6 @@ def get_header(request):
             inner.append((s.name, s.shortcut))
         header.append((i.name, inner))
 
-    print(header)
     # todo change this to a decorator
     return {'user': user, 'header': header}
 
@@ -95,6 +94,7 @@ def search(requests):
             returned_dic = {'articles': a}
         else:
             returned_dic = {}
+        returned_dic.update(get_header(requests))
         return render_to_response('search.html', returned_dic)
 
 
