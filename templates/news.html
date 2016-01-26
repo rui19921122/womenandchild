@@ -65,7 +65,9 @@
                                 </a>
                                 <a href="{% url 'register' %}" class="btn btn-success" style="margin-top: 10px;">没有账号？点击注册
                                 </a>
-                                <a type="reset" style="position: relative;" class="btn btn-success" id="back">返回
+                                <a href="{% url 'register' %}" class="btn btn-success" style="margin-top: 10px;"
+                                   id="back">
+                                    返回
                                 </a>
                             </form>
                         </div>
@@ -89,6 +91,7 @@
     </section>
 {% endblock %}
 {% block extent_js %}
+    {{ block.super }}
     <script>
         $(document).ready(function () {
             if (window.history.length > 1) {

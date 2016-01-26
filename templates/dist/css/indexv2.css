@@ -1168,3 +1168,6 @@ li.open, li.open > a {
     color: red !important;
 }
 
+#submit:hover {
+    cursor: pointer;
+}

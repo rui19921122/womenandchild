@@ -17,7 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 from main.views import index, dep, article, comment, search, uploads
-from user.views import register, login_url
+from user.views import register, login_url, login_out
 from womenandchild import settings
 
 urlpatterns = [
@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^uploads', uploads),
     url(r'^register$', register, name='register'),
     url(r'^login$', login_url, name='login'),
+    url(r'^loginout$', login_out, name='loginout'),
 ]
 if settings.DEBUG:
     urlpatterns.append(
